@@ -1,22 +1,72 @@
 \documentclass{ss_resume}
 
+% adjust the page margins
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+
+\newdate{date}{30}{08}{2017}
+\date{\displaydate{date}}
+
+\quote{Last Updated: \displaydate{date}}
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
 \makecvtitle
 
-\section{EDUCATION}
 
+\section{EDUCATION}
 \cventry{CBSE, 2012}{Class X}{Sumermal Jain Public School}{New Delhi, IN}{\textit{CGPA: 8.4/10.0}}{}
 \cventry{CBSE, 2014}{Class XII}{Sumermal Jain Public School}{New Delhi, IN}{\textit{79\%}}{}
 \cventry{Prospective 2018}{\textit{GPA: 7.68/10.0}}{Chitkara University}{Chandigarh, IN}{B.E (CSE)}{}
 
-\section{SKILLS}
 
-\textbf{PROGRAMMING}
-\begin{itemize}
-    \item Python
-    \item JavaScript
-    \item Bash
-    \item HTML CSS
-\end{itemize}
+\section{Projects}
+\cvitemwithcomment{Twitter Timeline Viewer[CLI]}{Scrape and/or Save tweets using command-line}{Python, BS4, Xpath}
 
-\end{document}
+\medskip
+
+\textbf{Chalkpad Automated GatePass}: Made using Python, Chrome WebDriver
+
+and Selenium, this script automatically applies gatepass for a student. After the user
+
+calls the script, automatic simulation will begin and a request will be registered
+
+to be approved by the faculty.\hfill \textit{Python, Selenium}
+
+\medskip
+
+\textbf{SO Crawler[CLI]}: Scrape and save popular questions, their answers
+
+and links to the threads into a JSON file. \hfill \textit{Python, Scrapy, Xpath}
+
+\medskip
+
+\textbf{Chat App}: A simple chat app with basic amenities where 2 users can chat
+
+remotely over the Internet. Also connected MySQL database using Flask-SQLAlchemy
+
+to add chat history to the application. \hfill \textit{Python, Flask, Socket-IO}
+
+\medskip
+
+\textbf{PyFl.IO}: A social-blogging web application where users can create accounts, have
+
+public profiles including Profile Pictures, short-description, likes and dislikes,
+
+and can publish posts/blogs visible to the world. \hfill \textit{Python, Jinja2, Flask, SQLAlchemy, SQLite}
